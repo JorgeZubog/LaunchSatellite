@@ -22,5 +22,11 @@ public class Rotation : MonoBehaviour
  
          var offset = new Vector3(Mathf.Sin(_angle), 0, Mathf.Cos(_angle)) * Radius;
          transform.position = _centre + offset;
-     }
+    }
+
+     private void OnTriggerEnter(Collider other)
+    {
+        if(other.transform.tag == "Capsule")
+            Destroy(other.gameObject);
+    }
 }

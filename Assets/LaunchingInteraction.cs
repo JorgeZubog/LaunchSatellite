@@ -95,23 +95,13 @@ public class LaunchingInteraction : MonoBehaviour
 
     private void SetDelta(Vector3 touchPos)
     {
+        float cap = 0.5f;
         endPos = touchPos;
         delta = startPos - endPos;
-        if(delta.x < -0.5f)
+        if(delta.magnitude > cap)
         {
-            delta.x = -0.5f;
-        }
-        if(delta.x > 0.5f)
-        {
-            delta.x = 0.5f;
-        }
-        if(delta.y < -0.5f)
-        {
-            delta.y = -0.5f;
-        }
-        if(delta.y > 0.5f)
-        {
-            delta.y = 0.5f;
+            delta.Normalize();
+            delta = delta * 0.5f; 
         }
         Debug.Log("delta" + delta);
     }

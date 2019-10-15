@@ -10,7 +10,7 @@ public class LaunchingForce : MonoBehaviour
     public bool isLaunched = false;
 
     private bool scanning = false;
-    public float magnitud = 1500;
+    float magnitud = 1800;
 
     public GameObject earth;
     public GameObject capsule;

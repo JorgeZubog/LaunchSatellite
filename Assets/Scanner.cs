@@ -26,5 +26,4 @@ public class Scanner : MonoBehaviour
         transform.GetComponent<Rigidbody>().AddForce(gravityVectory, ForceMode.Acceleration);
     }
 
-    
 }
